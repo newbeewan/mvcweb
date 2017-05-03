@@ -13,7 +13,9 @@ public class RepositoryConfig {
     public CommandLineRunner initDb(final ClientRepository repository) {
         return (args) -> {
             Client client = new Client("Client1 nom", "Client1 prenom", "Client1 email");
+            Client client2 = new Client("Client2 nom", "Client2 prenom", "Client2 email");
             repository.save(client);
+            repository.save(client2);
 
         };
     }
