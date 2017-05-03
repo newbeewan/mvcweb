@@ -1,12 +1,14 @@
 package ch.vd.spring.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
+@NamedQueries(
+        @NamedQuery(name = "Client.findClientList",
+                query = "select c from Client c"
+        )
+)
 public class Client {
 
     @Id

@@ -3,11 +3,12 @@ package ch.vd.spring;
 import ch.vd.spring.model.Client;
 import ch.vd.spring.repo.ClientRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class RepositoryConfig {
+public class ApplicationConfig {
 
     @Bean
     public CommandLineRunner initDb(final ClientRepository repository) {
@@ -18,5 +19,9 @@ public class RepositoryConfig {
             repository.save(client2);
 
         };
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(ApplicationConfig.class, args);
     }
 }
